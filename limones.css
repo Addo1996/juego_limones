@@ -1,119 +1,151 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* Fondo general */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: white;
-  text-align: center;
-  padding: 20px;
+/* FONDO ANIMADO */
+body{
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color:white;
+  text-align:center;
+  overflow:hidden;
 }
 
-/* Contenedor principal */
-.contenedor {
-  max-width: 900px;
-  margin: 0 auto;
+/* EFECTO DE FONDO */
+.fondo-animado{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background-image: radial-gradient(#38bdf8 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity:0.1;
+  animation: moverFondo 20s linear infinite;
 }
 
-/* Encabezado */
-.encabezado h1 {
-  font-size: 2.5rem;
-  color: #facc15;
-  margin-bottom: 10px;
+@keyframes moverFondo{
+  from{transform:translateY(0);}
+  to{transform:translateY(40px);}
 }
 
-.frase {
-  font-style: italic;
-  color: #cbd5f5;
-  margin-bottom: 5px;
+/* CONTENEDOR */
+.contenedor{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+  margin:auto;
+  padding:20px;
 }
 
-.autor {
-  font-size: 0.9rem;
-  color: #94a3b8;
-  margin-bottom: 20px;
+/* TITULO */
+.encabezado h1{
+  font-size:2.8rem;
+  color:#facc15;
+  text-shadow:0 0 15px #facc15;
 }
 
-/* Caja del juego */
-.juego-box {
-  background: #020617;
-  padding: 15px;
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+.frase{
+  color:#38bdf8;
+  font-size:0.9rem;
+  margin-bottom:20px;
 }
 
-/* Canvas */
-canvas {
-  background: radial-gradient(circle, #111827, #020617);
-  border: 3px solid #38bdf8;
-  border-radius: 10px;
-  display: block;
-  margin: 0 auto;
+/* CAJA DEL JUEGO */
+.juego-box{
+  background:#020617;
+  padding:15px;
+  border-radius:15px;
+  box-shadow:
+    0 0 20px #38bdf8,
+    inset 0 0 20px #0ea5e9;
 }
 
-/* Panel de info */
-.panel {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 25px 0;
+/* CANVAS */
+canvas{
+  background:linear-gradient(#020617,#111827);
+  border-radius:10px;
+  border:2px solid #38bdf8;
+  box-shadow:0 0 20px #38bdf8;
 }
 
-/* Tarjetas */
-.card {
-  background: #1e293b;
-  padding: 15px 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  min-width: 120px;
+/* PANEL */
+.panel{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin:25px 0;
 }
 
-.card p {
-  font-size: 0.9rem;
-  color: #94a3b8;
+/* TARJETAS */
+.card{
+  background:#020617;
+  border:2px solid #38bdf8;
+  border-radius:12px;
+  padding:15px 25px;
+  box-shadow:0 0 10px #38bdf8;
 }
 
-.card span {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #38bdf8;
+.card p{
+  font-size:0.8rem;
+  color:#94a3b8;
 }
 
-/* Botones */
-.botones {
-  margin-top: 10px;
+.card span{
+  font-size:2rem;
+  color:#38bdf8;
+  text-shadow:0 0 10px #38bdf8;
 }
 
-.botones button {
-  margin: 8px;
-  padding: 12px 20px;
-  font-size: 15px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background: #38bdf8;
-  color: #020617;
-  font-weight: bold;
-  transition: all 0.3s ease;
+/* VIDAS ROJAS */
+.vidas span{
+  color:#f43f5e;
+  text-shadow:0 0 10px #f43f5e;
 }
 
-/* Hover */
-.botones button:hover {
-  background: #0ea5e9;
-  transform: translateY(-2px);
+/* BOTONES */
+.botones button{
+  margin:10px;
+  width:60px;
+  height:60px;
+  font-size:20px;
+  border:none;
+  border-radius:50%;
+  cursor:pointer;
+  background:#020617;
+  color:#38bdf8;
+  border:2px solid #38bdf8;
+  box-shadow:0 0 10px #38bdf8;
+  transition:0.2s;
 }
 
-/* Botón reiniciar especial */
-.reiniciar {
-  background: #f43f5e;
-  color: white;
+/* HOVER BOTONES */
+.botones button:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px #38bdf8;
 }
 
-.reiniciar:hover {
-  background: #e11d48;
+/* BOTON REINICIAR */
+.reiniciar{
+  color:#f43f5e;
+  border:2px solid #f43f5e;
+  box-shadow:0 0 10px #f43f5e;
+}
+
+.reiniciar:hover{
+  box-shadow:0 0 20px #f43f5e;
+}
+
+/* FLASH */
+#flash{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:yellow;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.15s;
 }

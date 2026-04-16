@@ -8,38 +8,41 @@
 
 <body onload="iniciar()">
 
+  <div class="fondo-animado"></div>
+
   <div class="contenedor">
     
     <header class="encabezado">
-      <h1>🍋 Atrapar Limones</h1>
-      <p class="frase">Si del cielo te caen limones, aprende a hacer limonada</p>
-      <h2 class="autor">Autor: Addonys Herrera</h2>
+      <h1>🍋 ATRAPAR LIMONES</h1>
+      <p class="frase">Modo arcade activado</p>
     </header>
 
     <div class="juego-box">
       <canvas id="areaJuego" width="600" height="400"></canvas>
     </div>
-    
+
     <div class="panel">
       <div class="card">
-        <p>Puntaje</p>
+        <p>PUNTAJE</p>
         <span id="txtPuntaje">0</span>
       </div>
-      <div class="card">
-        <p>Vidas</p>
+      <div class="card vidas">
+        <p>VIDAS</p>
         <span id="txtVidas">3</span>
       </div>
     </div>
 
     <div class="botones">
-      <button onclick="moverIzquierda()">⬅ Izquierda</button>
-      <button onclick="moverDerecha()">Derecha ➡</button>
-      <button class="reiniciar">🔄 Reiniciar</button>
+      <button onclick="moverIzquierda()">⬅</button>
+      <button onclick="moverDerecha()">➡</button>
+      <button class="reiniciar" onclick="reiniciarJuego()">⟳</button>
     </div>
 
   </div>
 
-  <script src="limones.js"></script>
+  <div id="flash"></div>
 
+  <script src="limones.js"></script>
 </body>
+  
 </html>
