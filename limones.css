@@ -149,3 +149,12 @@ canvas{
   pointer-events:none;
   transition:opacity 0.15s;
 }
+
+.banner{
+  width:120px;
+  margin-bottom:15px;
+  border-radius:10px;
+
+  /* estilo Gamevoy */
+  box-shadow:0 0 15px #38bdf8;
+}
